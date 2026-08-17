@@ -100,7 +100,7 @@ a:hover {
     color: rgba(255,255,255,0.55);
     line-height: 1.5em;
     line-height: 1.5em;
-    padding: 0 0 0 1cm;
+    padding: 1cm 0 0 1cm;
     position: relative;
     bottom: auto;
     padding-left: 350px;
@@ -355,7 +355,7 @@ div.page_columns{
 }
 
 div.page_left {
-    width: 60%;
+    width: 70%;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -388,6 +388,7 @@ div.page_glossary {
 /* Extra top gap between the installations table and credits on list.html */
 .page_lists #credits-container {
     padding-top: 0.5cm;
+    padding-bottom: 0.5cm;
 }
 
 /* Radio buttons styling */
@@ -1026,7 +1027,7 @@ transition-delay: 0.2s;
    keeping the column at 40% total width. */
 .network-columns .page_right {
     box-sizing: border-box;
-    padding-left: 70px;
+    padding-left: 40px;
 }
 
 .network-legend-title {
@@ -1259,7 +1260,7 @@ transition-delay: 0.2s;
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* ── Page-content top offset (banner is now 60 px tall) ─────────────────── */
+  /* ── Page-content top offset ─────────────────── */
 
   #page_content {
     padding-top: 60px;
@@ -1362,6 +1363,7 @@ transition-delay: 0.2s;
 
   div.radio_buttons {
     padding-left: 0;
+    padding-top: 0;
     text-align: center;
   }
 
@@ -1396,12 +1398,15 @@ transition-delay: 0.2s;
 
   .summary_category {
     font-size: 24pt;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   summary {
     font-size: 1.8rem;
-    line-height: 2.2rem;
-    padding-left: 36px;
+    line-height: 2.0rem;
+    padding-left: 26px;
+    padding-bottom: 0rem;
   }
 
   details[open] summary ~ * {

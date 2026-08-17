@@ -243,25 +243,25 @@ function renderNetwork() {
           'background-color': 'data(nodeColor)',
           'label': 'data(label)',
           'font-family': 'Roboto, sans-serif',
-          'font-size': 40,
-          'font-weight': 300,
-          'width': 60,
-          'height': 60,
+          'font-size': 80,
+          'font-weight': 400,
+          'width': 120,
+          'height': 120,
           'border-width': 0,
           'text-wrap': 'wrap',
-          'text-max-width': 300,
+          'text-max-width': 400,
           'color': '#000000'
         }
       },
       {
         selector: 'node:selected',
-        style: { 'border-color': '#0c0c0c', 'border-width': 8 }
+        style: { 'border-color': '#505050', 'border-width': 20 }
       },
       {
         selector: 'edge',
         style: {
           'line-color': 'data(color)',
-          'width': 5,
+          'width': 10,
           'opacity': 0.6,
           'curve-style': 'bezier'
         }
@@ -296,11 +296,11 @@ function renderNetwork() {
       },
       {
         selector: 'node.highlighted',
-        style: { 'opacity': 1, 'border-color': '#0c0c0c', 'border-width': 2.5 }
+        style: { 'opacity': 1}
       },
       {
         selector: 'edge.highlighted',
-        style: { 'opacity': 0.9, 'width': 7 }
+        style: { 'opacity': 0.9, 'width': 10 }
       }
     ],
     layout: {
@@ -308,10 +308,10 @@ function renderNetwork() {
       animate: true,
       animationDuration: 800,
       nodeDimensionsIncludeLabels: true,
-      padding: 60,
-      nodeRepulsion: function () { return 4096; },
+      padding: 0,
+      nodeRepulsion: function () { return 1024; },
       nodeOverlap: 20,
-      idealEdgeLength: function () { return 60; },
+      idealEdgeLength: function () { return 40; },
       edgeElasticity: function () { return 32; },
       nestingFactor: 1.2,
       gravity: 1,
@@ -319,7 +319,7 @@ function renderNetwork() {
       initialTemp: 1000,
       coolingFactor: 0.99,
       minTemp: 1.0,
-      componentSpacing: 60,
+      componentSpacing: 20,
       fit: true
     }
   });

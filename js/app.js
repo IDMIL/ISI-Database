@@ -285,7 +285,7 @@ function renderSunburst(type) {
     margin: isMobile ? { t: 0, l: 10, r: 10, b: 0 } : { t: 0, l: 50, r: 0, b: 0 },
     font: { family: 'Roboto', size: 16, weight: 300 },
     autosize: true,
-    height: 600,
+    height: isMobile ? 580 : 600,
     paper_bgcolor: 'rgba(0,0,0,0)',
     plot_bgcolor: 'white'
   };
