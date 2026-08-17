@@ -309,9 +309,9 @@ function renderNetwork() {
       animationDuration: 800,
       nodeDimensionsIncludeLabels: true,
       padding: 60,
-      nodeRepulsion: function () { return 8192; },
-      nodeOverlap: 40,
-      idealEdgeLength: function () { return 100; },
+      nodeRepulsion: function () { return 4096; },
+      nodeOverlap: 20,
+      idealEdgeLength: function () { return 60; },
       edgeElasticity: function () { return 32; },
       nestingFactor: 1.2,
       gravity: 1,
@@ -319,7 +319,7 @@ function renderNetwork() {
       initialTemp: 1000,
       coolingFactor: 0.99,
       minTemp: 1.0,
-      componentSpacing: 80,
+      componentSpacing: 60,
       fit: true
     }
   });
