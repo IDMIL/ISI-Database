@@ -44,11 +44,28 @@ h1 {
     word-wrap: break-word;
     line-height: 3.2rem;
 }
-h2, h3, h4, h5 {
+
+h2 {
+    font-family: Roboto;
+    font-size: 34pt;
+    font-weight: 300;
+    line-height: 30pt;
+    margin: 12pt 0 0;
+} 
+
+h3, h4 {
     font-family: 'Roboto';
     font-weight: 400;
     color: #383838
 }
+
+h5 {
+    font-family: Roboto;
+    font-size: 12pt;
+    font-weight: 400;
+    line-height: 14pt;
+    margin: 6pt 0 12pt;
+} 
 
 h6 {
     font-family: 'Roboto';
@@ -376,6 +393,17 @@ div.page_glossary {
     padding-top: 20px;
     padding-right: 40px;
     padding-left: 300px;
+    min-height: 100vh;
+}
+
+div.page_about {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, #f6f6f6 0%, #dadada 100%);
+    width: 100%;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 350px;
     min-height: 100vh;
 }
 
@@ -1328,6 +1356,14 @@ transition-delay: 0.2s;
 
   /* Must use div. prefix to beat base rule specificity (div.page_glossary) */
   div.page_glossary {
+    padding-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  div.page_about {
     padding-top: 80px;
     padding-left: 16px;
     padding-right: 16px;
