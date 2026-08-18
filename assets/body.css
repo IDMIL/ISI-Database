@@ -42,6 +42,7 @@ h1 {
     color: #000000;
     font-size: 34pt;
     word-wrap: break-word;
+    line-height: 3.2rem;
 }
 h2, h3, h4, h5 {
     font-family: 'Roboto';
@@ -100,11 +101,11 @@ a:hover {
     color: rgba(255,255,255,0.55);
     line-height: 1.5em;
     line-height: 1.5em;
-    padding: 1cm 0 0 1cm;
-    position: relative;
-    bottom: auto;
+    padding: 1cm 0 0.5cm 1cm;
     padding-left: 350px;
     z-index: 2;
+    position: sticky;
+    top: 100vh;
 }
 
 .credits_home a {
@@ -211,10 +212,9 @@ summary::-webkit-details-marker {
     font-size: 10pt;
     color: #313131;
     line-height: 1.5em;
-    padding: 0.5cm 0 0 1cm;
-    position: relative;
-    bottom: auto;
-    left: auto;
+    padding: 0.5cm 0 0.5cm 1cm;
+    position: sticky;
+    top: 100vh;
     z-index: 2;
 }
 
@@ -374,7 +374,6 @@ div.page_glossary {
     background: linear-gradient(0deg, #f6f6f6 0%, #dadada 100%);
     width: 100%;
     padding-top: 20px;
-    padding-bottom: 0.5cm;
     padding-right: 40px;
     padding-left: 300px;
     min-height: 100vh;
@@ -388,7 +387,6 @@ div.page_glossary {
 /* Extra top gap between the installations table and credits on list.html */
 .page_lists #credits-container {
     padding-top: 0.5cm;
-    padding-bottom: 0.5cm;
 }
 
 /* Radio buttons styling */
@@ -397,17 +395,64 @@ div.radio_buttons {
     background-color: rgba(0, 0, 0, 0);
     font-family: Roboto;
     font-weight: 500;
+    font-size: 10pt;
+    letter-spacing: 10%;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1px;
     padding-left: 40px;
     padding-top: 3vh;
     margin-bottom: 20px; 
 }
 
+.radiobutton-group .label-text {
+  position: relative;
+  display: inline-block;
+}
+
+.radiobutton-group .label-text::before {
+  content: '';
+  position: absolute;
+  bottom: 0.6em;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale3d(0, 1, 1);
+  transform-origin: center left;
+  transition: transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: 0.2s;
+}
+
+.radiobutton-group .label-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0.6em;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 1);
+  transform: scale3d(0, 1, 1);
+  transform-origin: center left;
+  transition: transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.radiobutton-group > label:hover .label-text::before {
+  transform: scale3d(1, 1, 1);
+  transition-delay: 0s;
+}
+
+.radiobutton-group > label:has(input:checked) {
+  color: white;
+}
+
+.radiobutton-group > label:has(input:checked) .label-text::after {
+  transform: scale3d(1, 1, 1);
+}
+
 .radiobutton-group > label {
     cursor: pointer;
     display: inline-block;
+    align-items: center;
     margin-right: 15px;
     line-height: 40px;
     color: rgb(255, 255, 255);
@@ -416,7 +461,7 @@ div.radio_buttons {
 
 .radiobutton-group input {
     cursor: pointer;
-  }
+}
 
 input[type="radio"] {
     appearance: none;
@@ -480,7 +525,7 @@ div.page_right {
     border-radius: 0;
     border: 0.6mm solid #ccc;
     min-height: 50px;
-    padding: 6px 8px;
+    padding: 15px 8px;
     box-shadow: none;
     color: white;
     display: flex;
@@ -492,9 +537,14 @@ div.page_right {
     color: white;
     font-family: Roboto;
     font-weight: 500;
-    font-size: 9pt;
+    font-size: 10pt;
     flex-basis: 100%;
     min-width: 200px;
+}
+
+.dropdown_container .ts-control input::placeholder {
+  color: #fff;
+  opacity: 1;
 }
 
 .dropdown_container .ts-wrapper.multi .ts-control > div.item,
@@ -510,8 +560,8 @@ div.page_right {
     line-height: 1.4;
     padding: 6px 8px;
     font-weight: 500;
-    font-size: 9pt;
-    letter-spacing: 0.1em;
+    font-size: 10pt;
+    letter-spacing: 10%;
     text-transform: uppercase;
     margin: 2px 3px 2px 0;
     white-space: normal;
@@ -536,7 +586,7 @@ div.page_right {
     background-color: rgba(42, 49, 59, 0.1);
     border: 1px solid #ffffffaf;
     color: rgb(255, 255, 255);
-    font-size: 9pt;
+    font-size: 10pt;
     font-weight: 500;
 }
 
@@ -564,6 +614,7 @@ div.page_right {
     left: 300px;
     background-color: #F6F6F6;
     width: calc(100% - 300px);
+    min-height: 40vh;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -730,7 +781,7 @@ transition-delay: 0.2s;
   font-family: Roboto;
   font-weight: 500;
   font-size: 10pt;
-  letter-spacing: 0.15em;
+  letter-spacing: 10%;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
   transition: color 0.2s;
@@ -1306,6 +1357,7 @@ transition-delay: 0.2s;
   .chart-view-switcher-col {
     width: 100%;
     padding-left: 0;
+    padding-bottom: 0.5cm;
   }
 
   #network-section {
@@ -1394,6 +1446,7 @@ transition-delay: 0.2s;
 
   .summary_theme {
     font-size: 36pt;
+    line-height: 2.8rem;
   }
 
   .summary_category {

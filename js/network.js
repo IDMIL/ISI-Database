@@ -250,7 +250,7 @@ function renderNetwork() {
           'border-width': 0,
           'text-wrap': 'wrap',
           'text-max-width': 400,
-          'color': '#000000'
+          'color': '#303030'
         }
       },
       {

@@ -209,7 +209,13 @@ function renderResults() {
   container.innerHTML = '';
   syncCreditsHome();
 
-  if (!selectedLabels.length) return;
+  if (!selectedLabels.length) {
+    container.style.display = 'none';
+    container.style.minHeight = '0px';
+    return;
+  }
+
+  container.style.display = '';
 
   const results = filterInstallations(selectedLabels);
 
@@ -230,6 +236,7 @@ function renderResults() {
   container.appendChild(table);
 
   container.appendChild(buildCredits());
+  fitListToViewport();
 }
 
 // ─── Full installations table (list.html) ─────────────────────────────────────
@@ -252,6 +259,21 @@ function renderInstallationsTable() {
   table.appendChild(headerRow);
   INSTALLATIONS.forEach(inst => table.appendChild(makeRow(inst)));
   container.appendChild(table);
+}
+
+function fitListToViewport() {
+  const container = document.getElementById('list_inst');
+  if (!container) return;
+  if (!container.querySelector('table')) {
+    container.style.display = 'none';
+    container.style.minHeight = '0px';
+    return;
+  }
+
+  container.style.display = '';
+
+  const remainingHeight = window.innerHeight - container.getBoundingClientRect().top;
+  container.style.minHeight = `${Math.max(0, remainingHeight)}px`;
 }
 
 // ─── Sunburst ─────────────────────────────────────────────────────────────────
@@ -297,6 +319,7 @@ function renderSunburst(type) {
     : Plotly.newPlot(el, [trace], layout, config);
   plotPromise.then(() => {
     el._hasPlotly = true;
+    fitListToViewport();
     if (!sunburstEventsAttached) {
       sunburstEventsAttached = true;
       el.on('plotly_click', handleSunburstClick);
@@ -450,6 +473,7 @@ function applySunburstLayout() {
   if (pageContent) pageContent.classList.remove('network-active');
   updateBackground(currentPlotType);
   syncCreditsHome();
+  requestAnimationFrame(fitListToViewport);
 }
 
 function initChartSwitcher() {
@@ -527,6 +551,7 @@ function initMainPage() {
   initDropdown();
   initRadioButtons();
   initChartSwitcher();
+  window.addEventListener('resize', fitListToViewport);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
