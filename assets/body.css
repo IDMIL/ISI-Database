@@ -994,11 +994,11 @@ transition-delay: 0.2s;
 }
 
 .network-message {
-    color: #666666;
+    color: #272727;
     font-family: Roboto;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 12pt;
-    padding: 0 0 20px 0;
+    padding: 0 0 20px 35px;
     min-height: 30px;
 }
 
@@ -1224,6 +1224,11 @@ transition-delay: 0.2s;
 #network-controls .ts-dropdown .option.active,
 #network-controls .ts-dropdown .option:hover {
     background-color: #e8e8e8;
+}
+
+#network-controls .dropdown_container .ts-control input::placeholder {
+  color: #252525;
+  opacity: 1;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1530,16 +1535,21 @@ transition-delay: 0.2s;
 
   /* ── Results count ───────────────────────────────────────────────────────── */
 
+  table {
+    font-size: 0.6rem;
+  }
+
   .n_results,
   .n_results_page {
     font-size: 52pt;
     padding-left: 16px;
     padding-right: 16px;
+    letter-spacing: -5%;
   }
 
   /* Restore legend title to normal size — overrides the .n_results 52pt above */
   .network-legend-title {
-    font-size: 12pt;
+    font-size: 1rem;
     padding-left: 0;
     padding-right: 0;
   }
