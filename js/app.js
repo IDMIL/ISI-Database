@@ -131,11 +131,9 @@ const CREDIT_PARTS = [
   ['Marcelo Wanderley',   'https://www.mcgill.ca/music/marcelo-m-wanderley'],
   [' and contributions from ', null],
   ['Clémentine Berger',      'https://github.com/ClementineBerger'],
-  ['.\nDesigned by ', null],
+  ['. Designed by ', null],
   ['Camille Magnan',      'http://camillemagnan.com/'],
-  ['. Please read ', null],
-  ['this paper',      'https://doi.org/10.3390/mti5040019'],
-  [' for more information on the project.',      null],
+  ['.', null],
 ];
 const LICENSE_TEXT = 'This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.';
 

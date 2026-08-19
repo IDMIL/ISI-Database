@@ -30,6 +30,11 @@ p {
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
+
+b {
+    font-weight: 500;
+}
+
 body {
     font-family: 'Roboto';
     font-weight: 300;
@@ -63,7 +68,7 @@ h5 {
     font-family: Roboto;
     font-size: 12pt;
     font-weight: 400;
-    line-height: 14pt;
+    line-height: 16pt;
     margin: 6pt 0 12pt;
 } 
 
@@ -97,7 +102,7 @@ a:hover {
 .license_text {
     color: #AEAEAE;
     font-weight: 500;
-    font-size: 10pt;
+    font-size: 9pt;
 }
 
 /* License line in the dark home-page context */
@@ -114,10 +119,9 @@ a:hover {
 .credits_home {
     font-family: Roboto;
     font-weight: 500;
-    font-size: 10pt;
+    font-size: 9pt;
     color: rgba(255,255,255,0.55);
-    line-height: 1.5em;
-    line-height: 1.5em;
+    line-height: 1.4em;
     padding: 1cm 0 0.5cm 1cm;
     padding-left: 350px;
     z-index: 2;
@@ -226,9 +230,9 @@ summary::-webkit-details-marker {
 .credits_block {
     font-family: Roboto;
     font-weight: 500;
-    font-size: 10pt;
+    font-size: 9pt;
     color: #313131;
-    line-height: 1.5em;
+    line-height: 1.4em;
     padding: 0.5cm 0 0.5cm 1cm;
     position: sticky;
     top: 100vh;
