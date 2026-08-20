@@ -1131,15 +1131,12 @@ transition-delay: 0.2s;
 }
 
 .network-instructions h6 {
-    font-size: 14pt;
-    padding-left: 0;
-    line-height: 25pt;
-    color: #333333;
+  display: none;
 }
 
 /* ── Mobile nav stubs (elements injected by initMobileNav in app.js) ─────────
-   On desktop the wrapper disappears from the box model so existing banner
-   layout is unchanged; the toggle button is simply hidden.                    */
+  On desktop the wrapper disappears from the box model so existing banner
+  layout is unchanged; the toggle button is simply hidden.                    */
 
 .banner-nav {
   display: block; /* links stay in flow; replaced by a flex drawer on mobile */
@@ -1317,8 +1314,13 @@ transition-delay: 0.2s;
   /* Bigger tap targets for nav links inside the drawer */
   .banner-nav .banner_link,
   .banner-nav .banner_link_fixed {
-    line-height: 2.8em;
+    line-height: 2.4em;
     font-size: 11pt;
+  }
+
+  .banner_link::before,
+  .banner_link::after {
+    display: none;
   }
 
   /* Hamburger button */
@@ -1431,14 +1433,14 @@ transition-delay: 0.2s;
     overflow-x: auto;
   }
 
-  /* Fixed credits are intrusive on mobile — let users scroll to the bottom */
+  /* Fixed credits are intrusive on mobile */
   .credits_home {
     display: none;
   }
 
   /* Remove the 1cm left indent so credits align with page content */
   .credits_block {
-    padding-left: 16px;
+    display: none;
   }
 
   /* ── Two columns → single column ─────────────────────────────────────────── */
@@ -1496,6 +1498,8 @@ transition-delay: 0.2s;
 
   .network-message {
     padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   /* Override the desktop 60% width; legend is full-width when stacked */
@@ -1582,7 +1586,7 @@ transition-delay: 0.2s;
   #network-section > .page_right {
     width: 100%;
     box-sizing: border-box;
-    padding: 24px 16px 0;
+    padding: 24px 16px 44px;
   }
 
   #network-section > #node-detail {

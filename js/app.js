@@ -6,6 +6,7 @@ let tomSelectInstance = null;
 let selectedLabels = [];
 let sunburstEventsAttached = false;
 let networkReady = false;
+let chartView = 'sunburst';
 
 // ─── Theme maps ───────────────────────────────────────────────────────────────
 
@@ -262,6 +263,11 @@ function renderInstallationsTable() {
 function fitListToViewport() {
   const container = document.getElementById('list_inst');
   if (!container) return;
+  if (chartView !== 'sunburst') {
+    container.style.display = 'none';
+    container.style.minHeight = '0px';
+    return;
+  }
   if (!container.querySelector('table')) {
     container.style.display = 'none';
     container.style.minHeight = '0px';
@@ -441,6 +447,7 @@ function applyMobileNetworkOrder() {
 }
 
 function applyNetworkLayout() {
+  chartView = 'network';
   const pageContent = document.getElementById('page_content');
   const sunburstSection = document.getElementById('sunburst-section');
   const networkSection = document.getElementById('network-section');
@@ -459,6 +466,7 @@ function applyNetworkLayout() {
 }
 
 function applySunburstLayout() {
+  chartView = 'sunburst';
   const pageContent = document.getElementById('page_content');
   const sunburstSection = document.getElementById('sunburst-section');
   const networkSection = document.getElementById('network-section');
